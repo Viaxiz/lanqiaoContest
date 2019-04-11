@@ -1,5 +1,5 @@
 /*
-which comes from the book 《挑战程序竞赛入门》
+the most part of code comes from the book 《挑战程序竞赛入门》
 */
 #include<iostream>
 #include<algorithm>
@@ -10,7 +10,7 @@ const int MAX_N = 100, MAX_M = 100;
 const int INF = 100000000;
 
 //使用pair表示状态时，使用typedef更方便一些
-typedef pair <int, int >P;
+typedef pair <int, int >P;  
 //输入
 char maze[MAX_N][MAX_M + 1];
 int N, M;
@@ -58,8 +58,16 @@ int bfs() {
 }
 
 int  main() {
+	//输入迷宫
+	scanf("%d%d", &N, &M);
+	for (int i = 0; i < N; i++) {
+		scanf("%s", maze[i]);
+	}
+	//输入起点坐标和终点坐标
+	scanf("%d%d%d%d", &sx, &sy, &gx, &gy);
 	int res = bfs();
 	printf("%d\n", res);
+	system("pause");
 	return 0;
 }
 
